@@ -67,7 +67,7 @@ function Navigation({onPageChanged}) {
             h-[20px] w-[20px] object-contain filterGray
             '/></a></li>
             <li className='w-[80px] h-full border-l-[1px] border-line
-            flex justify-center flex-col mx-auto'><a href="https://github.com/Pariete" className='flex justify-center'><img src={githubIcon} alt="github icon" className='
+            flex justify-center flex-col mx-auto'><a href="https://github.com/rinerte" className='flex justify-center'><img src={githubIcon} alt="github icon" className='
             h-[20px] w-[20px] object-contain filterGray
             '/></a></li>
         </nav>

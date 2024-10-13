@@ -65,8 +65,8 @@ function Hero() {
         <span className='text-accentBlue'>const </span>
         <span className='text-accentGreen'>githubLink </span> = 
         <span className='text-accentOrange mb-[85px]'>
-          <a href="https://github.com/Pariete"
-          className='text-accentOrange active:text-accentOrange  leading-[100%] hover:text-accentOrange no-underline'> &quot;https://github.com/Pariete&quot;</a></span>
+          <a href="https://github.com/rinerte"
+          className='text-accentOrange active:text-accentOrange  leading-[100%] hover:text-accentOrange no-underline'> &quot;https://github.com/rinerte&quot;</a></span>
         </span>
       </div>
 
