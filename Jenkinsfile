@@ -1,8 +1,10 @@
 pipeline {
     agent {
         label 'docker-agent'
-        retries 2
-        retryTimeout 300
+    }
+    options {
+        retry(3)  // Add retries here instead of in agent block
+        timeout(time: 10, unit: 'MINUTES') 
     }
     stages {
         stage('Checkout') {
