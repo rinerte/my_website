@@ -7,8 +7,20 @@ COPY . .
 RUN npm run build
 
 FROM nginx:alpine
-RUN mkdir -p /usr/share/nginx/html
+
+# Установка прав и владельца
+RUN mkdir -p /usr/share/nginx/html && \
+    chown -R nginx:nginx /usr/share/nginx/html && \
+    chmod -R 755 /usr/share/nginx/html
+
+# Копирование конфигурации
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Копирование приложения
 COPY --from=builder /app/dist /usr/share/nginx/html
+
+# Проверка конфигурации
+RUN nginx -t
 EXPOSE 80
 
 
