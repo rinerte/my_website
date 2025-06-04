@@ -89,7 +89,6 @@ export const GAME = new function(){
         }
         
         if(GAME.Key('Space')){
-            console.log('fire');
             fire(object.x+26, object.y);
         }
         object.lastProcessedTime = Date.now();

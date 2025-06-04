@@ -30,7 +30,6 @@ function App() {
         <Contact />
       );
       default: {
-        console.log(page);
         return <Hero/>
       }
     }

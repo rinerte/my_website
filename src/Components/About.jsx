@@ -70,7 +70,6 @@ function About() {
         }
         const items = () =>{            
             let result=[];
-            console.log(height);
             for(let i=1;i<(height/40)+1;i++){
                 result.push(number(i));
             }
