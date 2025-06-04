@@ -33,9 +33,11 @@ pipeline {
                 sh 'docker rm react-app || true'
                 sh """
                 docker run -d \
-                  --name react-app \
-                  -p 3000:80 \
-                  my-react-app
+                    -v /etc/timezone:/etc/timezone:ro \
+                    -v /etc/localtime:/etc/localtime:ro \
+                    -e TZ=Asia/Tokyo \
+                    -p 3000:80 \
+                    my-react-app
                 """
             }
         }
