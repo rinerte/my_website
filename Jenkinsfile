@@ -29,8 +29,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'docker stop my-react-app || true'
-                sh 'docker rm my-react-app || true'
+                sh 'docker stop react-app || true'
+                sh 'docker rm react-app || true'
                 sh """
                 docker run -d \
                   --name react-app \
