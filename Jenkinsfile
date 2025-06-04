@@ -36,6 +36,7 @@ pipeline {
                     -v /etc/timezone:/etc/timezone:ro \
                     -v /etc/localtime:/etc/localtime:ro \
                     -e TZ=Asia/Tokyo \
+                    --name react-app \
                     -p 3000:80 \
                     my-react-app
                 """
