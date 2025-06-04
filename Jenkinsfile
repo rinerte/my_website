@@ -3,7 +3,7 @@ pipeline {
         label 'docker-agent'
     }
     options {
-        retry(3)  // Add retries here instead of in agent block
+        retry(3)  
         timeout(time: 10, unit: 'MINUTES') 
     }
     stages {
@@ -21,7 +21,6 @@ pipeline {
                     sh """
                     docker build \
                       --memory 512m \
-                      --cpus 0.5 \
                       --build-arg NODE_OPTIONS="--max-old-space-size=384" \
                       -t my-react-app .
                     """
