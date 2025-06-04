@@ -9,6 +9,7 @@ import About from './Components/About'
 import Projects from './Components/Projects'
 import Contact from './Components/Contact/Contact.jsx'
 function App() {
+  console.log('App mounted');
   const [page,setPage] = useState('hello');
 
   const onPageChanged = (page) => {

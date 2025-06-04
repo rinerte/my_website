@@ -8,6 +8,8 @@ RUN npm run build
 
 FROM nginx:alpine
 
+RUN sed -i 's/error_log .*;/error_log stderr debug;/' /etc/nginx/nginx.conf && \
+    sed -i 's/access_log .*;/access_log stderr;/' /etc/nginx/nginx.conf
 # # Установка прав и владельца
 # RUN mkdir -p /usr/share/nginx/html && \
 #     chown -R nginx:nginx /usr/share/nginx/html && \
@@ -28,7 +30,7 @@ RUN nginx -t
 # Установите права
 RUN chown -R nginx:nginx /usr/share/nginx/html && \
     chmod -R 755 /usr/share/nginx/html
-    
+
 EXPOSE 80
 
 
