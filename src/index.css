@@ -1,110 +1,68 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-*{
-  /* Foreground, Background */
-  scrollbar-color: #607B96 #011627;
-}
-*::-webkit-scrollbar-corner{
-  background-color:#011627;
-}
-*::-webkit-scrollbar {
-  width: 10px; 
-  height: 10px;
-  border-bottom: none;
-}
-*::-webkit-scrollbar-thumb { /* Foreground */
-  background: #607B96;
-}
-*::-webkit-scrollbar-track { /* Background */
-  background: #011627;
-  border: 1px solid #1E2D3D;
-  border-bottom: none;
-}
-.filterGray{
-  filter: brightness(0) saturate(100%) invert(45%) sepia(28%) saturate(470%) hue-rotate(169deg) brightness(96%) contrast(85%);
-}
-.filterGray{
-  filter: brightness(0) saturate(100%) invert(45%) sepia(28%) saturate(470%) hue-rotate(169deg) brightness(96%) contrast(85%);
 }
 
-.filterRed {
-  filter: brightness(0) saturate(100%) invert(93%) sepia(93%) saturate(2037%) hue-rotate(299deg) brightness(99%) contrast(83%);
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
 }
 
-.filterGreen{
-  filter: brightness(0) saturate(100%) invert(98%) sepia(42%) saturate(1911%) hue-rotate(81deg) brightness(87%) contrast(95%);
-}
-
-.filterBlue{
-  filter: brightness(0) saturate(100%) invert(26%) sepia(10%) saturate(7277%) hue-rotate(208deg) brightness(101%) contrast(94%);
-}
-.filterWhite{
-  filter: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(6840%) hue-rotate(178deg) brightness(99%) contrast(90%);
-}
-
-html{
-  min-height: calc(100vh - 20px);
-  overflow-x: hidden;
-}
-body{
+body {
   margin: 0;
-  padding: 0;
   display: flex;
   place-items: center;
-  min-width: calc(100% - 20px);
-  min-height: 100%;
-  user-select: none;
-  background-color: #01080E;
-  overflow-x: hidden;
+  min-width: 320px;
+  min-height: 100vh;
 }
 
-*{
-  @font-face {
-      font-family: "FiraCode";
-      src: url("assets/fonts/FiraCode-Bold.ttf") format("truetype");
-      font-style: normal; 
-      font-weight: 700;
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
   }
-  @font-face {
-      font-family: "FiraCode";
-      src: url("assets/fonts/FiraCode-Light.ttf") format("truetype");
-      font-style: normal; 
-      font-weight: 300;
+  a:hover {
+    color: #747bff;
   }
-  @font-face {
-      font-family: "FiraCode";
-      src: url("assets/fonts/FiraCode-Regular.ttf") format("truetype");
-      font-style: normal; 
-      font-weight: 400;
+  button {
+    background-color: #f9f9f9;
   }
-  font-family: "FiraCode";
 }
-#root{
-  width: 100%;
-  height: 100%;
-}
-
-.green__gradient {
-  opacity: 0.4;
-  background: linear-gradient(90deg, #43D9AD 0%, #43D9AD 100%);
-  filter: blur(87px);
-}
-.blue__gradient {
-  opacity: 0.4;
-  background: linear-gradient(90deg, #4D5BCE
-  0%, #4D5BCE
-  100%);
-  filter: blur(87px);
-  transform: rotate(13.51deg);
-}
-
-

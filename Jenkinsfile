@@ -22,7 +22,7 @@ pipeline {
                     docker build \
                       --memory 512m \
                       --build-arg NODE_OPTIONS="--max-old-space-size=384" \
-                      -t my-react-app .
+                      -t minimal-vite-app .
                     """
                 }
             }
@@ -36,9 +36,9 @@ pipeline {
                     -v /etc/timezone:/etc/timezone:ro \
                     -v /etc/localtime:/etc/localtime:ro \
                     -e TZ=Asia/Tokyo \
-                    --name react-app \
-                    -p 1234:80 \
-                    my-react-app
+                    --name minimal-vite \
+                    -p 3000:80 \
+                    minimal-vite-app
                 """
             }
         }
