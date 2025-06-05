@@ -11,7 +11,8 @@ FROM nginx:alpine
 RUN sed -i 's/error_log .*;/error_log stderr debug;/' /etc/nginx/nginx.conf && \
     sed -i 's/access_log .*;/access_log stderr;/' /etc/nginx/nginx.conf
 
-COPY app.conf /etc/nginx/conf.d/app.conf
+COPY app.conf /etc/nginx/conf.d/
+RUN rm /etc/nginx/conf.d/default.conf
 
 COPY --from=builder /app/dist /usr/share/nginx/html
 
