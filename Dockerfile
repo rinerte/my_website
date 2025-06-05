@@ -10,27 +10,13 @@ FROM nginx:alpine
 
 RUN sed -i 's/error_log .*;/error_log stderr debug;/' /etc/nginx/nginx.conf && \
     sed -i 's/access_log .*;/access_log stderr;/' /etc/nginx/nginx.conf
-# # Установка прав и владельца
-# RUN mkdir -p /usr/share/nginx/html && \
-#     chown -R nginx:nginx /usr/share/nginx/html && \
-#     chmod -R 755 /usr/share/nginx/html
 
-    # Удалите дефолтную конфигурацию
-RUN rm /etc/nginx/conf.d/default.conf
+COPY app.conf /etc/nginx/conf.d/app.conf
 
-# Копирование конфигурации
-COPY nginx.conf /etc/nginx/nginx.conf
-
-# Копирование приложения
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Проверка конфигурации
-RUN nginx -t
-
-# Установите права
-RUN chown -R nginx:nginx /usr/share/nginx/html && \
-    chmod -R 755 /usr/share/nginx/html
 
 EXPOSE 80
 
+CMD ["nginx", "-g", "daemon off;"]
 
