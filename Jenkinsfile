@@ -29,15 +29,16 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'docker stop react-app || true'
-                sh 'docker rm react-app || true'
+                sh 'docker stop minimal-vite || true'
+                sh 'docker rm minimal-vite || true'
                 sh """
                 docker run -d \
                     -v /etc/timezone:/etc/timezone:ro \
                     -v /etc/localtime:/etc/localtime:ro \
                     -e TZ=Asia/Tokyo \
                     --name minimal-vite \
-                    -p 3000:80 \
+                    -p 80:80 \
+                    -p 443:443 \
                     minimal-vite-app
                 """
             }
