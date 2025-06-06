@@ -22,7 +22,7 @@ pipeline {
                     docker build \
                       --memory 512m \
                       --build-arg NODE_OPTIONS="--max-old-space-size=384" \
-                      -t my-react-app .
+                      -t react-app .
                     """
                 }
             }
@@ -37,8 +37,9 @@ pipeline {
                     -v /etc/localtime:/etc/localtime:ro \
                     -e TZ=Asia/Tokyo \
                     --name react-app \
-                    -p 1234:80 \
-                    my-react-app
+                    -p 80:80 \
+                    -p 8443:443 \
+                    react-app
                 """
             }
         }
