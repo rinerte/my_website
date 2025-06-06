@@ -38,7 +38,7 @@ pipeline {
                     -e TZ=Asia/Tokyo \
                     --name minimal-vite \
                     -p 80:80 \
-                    -p 443:443 \
+                    -p 8443:443 \
                     minimal-vite-app
                 """
             }
